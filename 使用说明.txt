@@ -1,28 +1,28 @@
 
-��Ҫ˵����
-    --������windows ƽ̨������������mpg�ļ�ת��Ϊmp4��ʽ���ļ���
-	--ʹ�õ���ffmpeg��Դ��Ŀ����
-	--ʹ�õ���Ƶѹ��������x264�����
-	--ffmpeg �ٷ���վ��https://www.ffmpeg.org/
-	--x264�ٷ���վ��http://www.videolan.org/developers/x264.html
+简要说明：
+    --用于在windows 平台利用批处理将mpg文件转换为mp4格式的文件；
+	--使用的是ffmpeg开源项目工具
+	--使用的视频压缩工具是x264编码库
+	--ffmpeg 官方网站：https://www.ffmpeg.org/
+	--x264官方网站：http://www.videolan.org/developers/x264.html
 
-ʹ�ò��裺
-	--1.����Ҫѹ��ת���mpg�ļ��ŵ�.\inputĿ¼�£�
-	--2.�����Լ�ѹ������Ҫ�����˫��һ���ļ���������ʾ������ɼ���
-		--ת��ѹ��_������.bat        ->ѹ����Ƶ�����Ϻã���ѹ���ϵ�
-		--ת��ѹ��_��ѹ����.bat      ->ѹ����Ƶ�����ϲ��ѹ���ϸ�
-		--ת��ѹ��_����ѹ����.bat    ->ѹ����Ƶ������ѹ���������������
-	--3.�ȴ����ȴ�ʱ������ļ���С�Լ��ļ������й�
-	--4.ת��ɹ����ļ�����Ŀ¼.\output�£���׺��Ϊ.mp4����Ӧ���ļ���û�иı�
+使用步骤：
+	--1.将需要压缩转码的mpg文件放到.\input目录下；
+	--2.根据自己压缩的需要，鼠标双击以下任意一个文件，按照提示操作完成即可
+		--转码压缩_高质量.bat        ->压缩视频质量较好，但压缩较低
+		--转码压缩_高压缩率.bat      ->压缩视频质量较差，但压缩较高
+		--转码压缩_折中压缩率.bat    ->压缩视频质量和压缩率是上面的折中
+	--3.等待，等待时间根据文件大小以及文件数量有关
+	--4.转码成功的文件放在目录.\output下，后缀名为.mp4，对应的文件名没有改变
 	
 
-����˵����
-	1.��Ŀ¼.\bin����window 32λ��windows 64 λ��ffmpeg �ļ���Ĭ��ʹ�õ���32λ�ģ�
-	  �����Ҫ64λ�ģ��ɽ�.\bin\64bit\�µ�ffmpeg.exe�ļ�����������.\bin\Ŀ¼�µ�
-	  ffmpeg.exe�ļ�
-	2.ת��ʱ������ļ���С�Լ��ļ������й�
+其他说明：
+	1.在目录.\bin下有window 32位和windows 64 位的ffmpeg 文件，默认使用的是32位的；
+	  如果需要64位的，可将.\bin\64bit\下的ffmpeg.exe文件拷贝并覆盖.\bin\目录下的
+	  ffmpeg.exe文件
+	2.转码时间跟文件大小以及文件数量有关
 	
-��ϵ��
+联系：
 	shihuadesysu@gmial.com
 
 github:
