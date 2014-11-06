@@ -24,7 +24,7 @@ for %%i in (input\*.mpg) do (
 )
 echo ""
 echo "****************************************************************"
-echo "    all mpg files in iput directory have been transcoded        "
+echo "    all mpg files in input directory have been transcoded        "
 echo "    into mp4 format, please check all output files under        "
 echo "    directory .\output                                          "
 echo "****************************************************************"
