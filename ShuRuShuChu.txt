@@ -1,0 +1,2 @@
+input   D:\FFMPEGTestData
+output  E:\FFMPEGTestData02

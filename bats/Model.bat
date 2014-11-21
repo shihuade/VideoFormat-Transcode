@@ -13,8 +13,9 @@ Set /a SubDirLength=0
 set /a DirLenth=0
 Set /a FileNameLength=0
 
-set ParentDir=E:\FFMPEG\BatProcess
-set OutPutDir=E:\FFMPEGTestData02
+rem set ParentDir=E:\FFMPEG\BatProcess
+rem set OutPutDir=E:\FFMPEGTestData02
+Replace--ForInputOutPutDirSetting
 
 set FileName=""
 set SubDirName=""
@@ -24,8 +25,8 @@ set OutputFileDir=""
 
 set FlagFile=""
 
-for /r E:\FFMPEG\BatProcess  %%i  in (*.mpg) do (
-	
+rem for /r E:\FFMPEG\BatProcess  %%i  in (*.mpg) do (
+Replace--ForCommand	
 	
 	echo txt file name is %%i
 	
@@ -86,8 +87,12 @@ for /r E:\FFMPEG\BatProcess  %%i  in (*.mpg) do (
 	set FlagFile=%%i.transcoded
 	echo FlagFile is !FlagFile!
 	
+	if exist !FlagFile! (
+		rem .\bin\ffmpeg -i "%%i"  -c:v libx264  -profile:v main  -level 40 -qmin 24 -qmax 40  -y  "!OutputFileFullPath!"
+		Replace--FFMPEGCommand
+	)
 	rem echo Test >!OutputFileFullPath!
-	.\bin\ffmpeg -i "%%i"  -c:v libx264  -profile:v main  -level 40 -qmin 24 -qmax 40  -y  "!OutputFileFullPath!"
+	
 	
 	
 )
