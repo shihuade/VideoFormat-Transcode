@@ -14,14 +14,12 @@ call set x=%%InputFile:~-%n%,1%%
 
 if "%x%"=="%f%" goto :end
 set /a n+=1
-echo n is %n%
 goto :begin
 
 :end
 set /a n-=1
-echo n is %n%
+rem echo n is %n%
 echo %n% >%OutputFile%
-pause
 
 goto :eof
 
