@@ -3,7 +3,7 @@ setlocal EnableDelayedExpansion
 set FileNameInfoLog=..\log\LogFileNameLenth.txt
 Set FileDirInfoLog=..\log\LogDirInfo.txt
 set ParentDirInfoLog=..\log\LogParentDirInfo.txt
-set TranscodedList=..\log\ZhuanMaJiLu.txt
+set DeletedFlagList=..\log\DeleteFlagFileList.txt
 Set /a FileFullPathLength=0
 set /a ParentDirLength=0
 Set /a SubDirLength=0
@@ -21,9 +21,9 @@ set OutputFileFullPath=""
 set OutputFileDir=""
 set FlagFile=""
 
-echo **************************************>!TranscodedList!
-echo   Transcoded file listed as below:>>!TranscodedList!
-echo **************************************>>!TranscodedList!
+echo **************************************>!DeletedFlagList!
+echo   Deleted flag file for .mpg files listed as below:>>!DeletedFlagList!
+echo **************************************>>!DeletedFlagList!
 
 rem --Replace--ForCommand--	
 ::  for /r E:\FFMPEG\BatProcess  %%i  in (*.mpg) do (
@@ -87,18 +87,17 @@ rem --Replace--ForCommand--
 	set FlagFile=!OutputFileFullPath!.transcoded
 	echo FlagFile is !FlagFile!
 	
-	if not exist "!FlagFile!" (
+	if  exist "!FlagFile!" (
 		
-		rem  --Replace--FFMPEGCommand--
-		rem  ..\bin\ffmpeg -i "%%i"  -c:v libx264  -profile:v main  -level 40 -qmin 24 -qmax 40  -y  "!OutputFileFullPath!"
-		
-		echo %%i ----!OutputFileFullPath!>>!TranscodedList!
-		echo %%i ----!OutputFileFullPath!>"!FlagFile!"
+		del "!FlagFile!"
+		echo deleted flag file "!FlagFile!"
+		echo "!FlagFile!">>"!DeletedFlagList!"
 	)
 			
 )
 echo *********************************************************
 echo ***                                                  ****
-echo    all mpg files has been transcoded into .mp4 format
+echo    now all .mpg file can be re-trnscoded 
+echo    please run the start sctript
 echo ***                                                  ****
 echo *********************************************************

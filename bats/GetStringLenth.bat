@@ -14,7 +14,6 @@ if defined InputString goto Continue
 
 rem echo return is %Return%
 echo %Return% >%OutFile%
-
 goto :eof
 
 

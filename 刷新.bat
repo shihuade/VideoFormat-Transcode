@@ -12,8 +12,8 @@ rem ***************************************************************************
 setlocal EnableDelayedExpansion
 rem setlocal DisableDelayedExpansion
 set ConfigureFile=MuLuSheZhi.txt
-set OutputTemFile=bats\ZhuanMa.bat
-set ModelFile=bats\Model.bat
+set OutputTemFile=bats\DeleteFlagFie.bat
+set ModelFile=bats\ModelForDeletedFlagFile.bat
 
 rem ***************************************************************************
 rem  step 2: parse input and output setting from configure file
@@ -93,11 +93,7 @@ for /f "tokens=*" %%m in (%ModelFile%) do (
 					echo ForLoopLine is --!ForLoopLine1!!Part2! do (--
 					echo !ForLoopLine1!!Part2! do (>>%OutputTemFile%
 				)
-				
-				if "!SencondWord!" == "FFMPEGCommand" (				
-					setlocal DisableDelayedExpansion
-					echo ..\bin\ffmpeg -i "%%%%i"  -c:v libx264  -profile:v main  -level 40 -qmin 24 -qmax 40  -y  "!OutputFileFullPath!">> %OutputTemFile%
-				)			
+					
 				
 				setlocal DisableDelayedExpansion
 			)
@@ -110,8 +106,9 @@ rem  step 4: call the bat script file for final transcode
 rem ***************************************************************************
 
 echo "now call bats fie***********"
+
 cd bats
-call ZhuanMa.bat
+call DeleteFlagFie.bat
 cd ..
 pause
 
